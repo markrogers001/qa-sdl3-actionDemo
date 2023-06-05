@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <style>
+        div {
+            padding: 10px;
+        }
+        body {
+            background-color: cyan;
+        }
+    </style>
+    <script>
+        const printInfo = (theForm) =>
+        {
+            let name = theForm.name.value;
+            let age = theForm.age.value;
+            let info = document.getElementById("info");
+            info.innerText = name + ' ' + age;
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <form onsubmit="return printInfo(this)">
+            <label for="name">Enter name: </label><br><input id="name" type="text"><br>
+            <label for="age">Enter age:</label><br><input id="age" type="number" min="0" max="125"><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="info"></div>
+</body>
+</html>

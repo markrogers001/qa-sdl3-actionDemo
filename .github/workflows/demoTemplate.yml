@@ -1,0 +1,38 @@
+name: Demo Template
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: unbuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Lint
+        runs: echo "Linting the code..."
+  test:
+    runs-on: unbuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Testing code
+        runs: echo "Testing the code..."
+  build:
+    needs: test
+    runs-on: unbuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: building app
+        runs: echo "Building the app..."
+  deploy:
+    needs: build
+    runs-on: unbuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: deploy app
+        runs: echo "Deploying the app..."
+
