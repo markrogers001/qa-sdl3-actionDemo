@@ -8,31 +8,31 @@ jobs:
   lint:
     runs-on: unbuntu-latest
     steps:
-      - name: Get code
-        uses: actions/checkout@v3
+      # - name: Get code
+      #   uses: actions/checkout@v3
       - name: Lint
         run: echo "Linting the code..."
   test:
     runs-on: unbuntu-latest
     steps:
-      - name: Get code
-        uses: actions/checkout@v3
+      # - name: Get code
+      #   uses: actions/checkout@v3
       - name: Testing code
         run: echo "Testing the code..."
   build:
     needs: test
     runs-on: unbuntu-latest
     steps:
-      - name: Get code
-        uses: actions/checkout@v3
+      # - name: Get code
+      #   uses: actions/checkout@v3
       - name: building app
         run: echo "Building the app..."
   deploy:
     needs: build
     runs-on: unbuntu-latest
     steps:
-      - name: Get code
-        uses: actions/checkout@v3
+      # - name: Get code
+      #   uses: actions/checkout@v3
       - name: deploy app
         run: echo "Deploying the app..."
 
