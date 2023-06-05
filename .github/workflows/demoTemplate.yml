@@ -11,14 +11,14 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: Lint
-        runs: echo "Linting the code..."
+        run: echo "Linting the code..."
   test:
     runs-on: unbuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout@v3
       - name: Testing code
-        runs: echo "Testing the code..."
+        run: echo "Testing the code..."
   build:
     needs: test
     runs-on: unbuntu-latest
@@ -26,7 +26,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: building app
-        runs: echo "Building the app..."
+        run: echo "Building the app..."
   deploy:
     needs: build
     runs-on: unbuntu-latest
@@ -34,5 +34,5 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: deploy app
-        runs: echo "Deploying the app..."
+        run: echo "Deploying the app..."
 
